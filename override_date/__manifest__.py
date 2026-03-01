@@ -3,7 +3,7 @@
     'author': "Techs Factory",
     'website': "https://www.techsfactory.com",
     'version': '0.1',
-    'depends': ['base','account'],
+    'depends': ['account'],
     'data': [
     ],
     'demo': [
