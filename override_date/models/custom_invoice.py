@@ -4,4 +4,4 @@ class Custom_Invoice(models.Model):
     _inherit = 'account.move'
     
 
-    invoice_date = fields.Date(string='Invoice/Bill Date111',copy=False)
+    invoice_date = fields.Date(string='Invoice/Bill Date111',copy=False,store=False)
