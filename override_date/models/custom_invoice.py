@@ -8,5 +8,20 @@ class Custom_Invoice(models.Model):
 
     def write(self, vals):
         if 'invoice_date' in vals:
-            self = self.with_context(check_move_validity=False)
+            # Bypass posted restriction
+            return super(
+                AccountMove,
+                self.with_context(
+                    skip_account_move_synchronization=True,
+                    check_move_validity=False,
+                    skip_invoice_sync=True,
+                )
+            ).write(vals)
+
         return super().write(vals)
+
+
+
+    def _check_write_allowed(self, fields):
+        # Disable write protection on posted moves (LOCAL ONLY)
+        return True
