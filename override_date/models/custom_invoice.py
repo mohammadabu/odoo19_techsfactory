@@ -10,7 +10,7 @@ class Custom_Invoice(models.Model):
         if 'invoice_date' in vals:
             # Bypass posted restriction
             return super(
-                AccountMove,
+                Custom_Invoice,
                 self.with_context(
                     skip_account_move_synchronization=True,
                     check_move_validity=False,
