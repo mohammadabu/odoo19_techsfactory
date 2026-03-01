@@ -23,5 +23,7 @@ class Custom_Invoice(models.Model):
 
 
     def _check_write_allowed(self, fields):
-        # Disable write protection on posted moves (LOCAL ONLY)
-        return True
+        # Allow editing invoice_date on posted moves (LOCAL ONLY)
+        if 'invoice_date' in fields:
+            return
+        return super()._check_write_allowed(fields)
