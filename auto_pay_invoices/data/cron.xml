@@ -3,7 +3,7 @@
         <field name="name">Auto Pay All Posted Invoices</field>
         <field name="model_id" ref="account.model_account_move"/>
         <field name="state">code</field>
-        <field name="code">env['account.move'].cron_auto_pay_all_invoices()</field>
+        <field name="code">model.cron_auto_pay_all_invoices_1()</field>
         <field name="interval_number">1</field>
         <field name="interval_type">days</field>
         <field name="active">True</field>
