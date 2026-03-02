@@ -9,7 +9,6 @@ class AutoPay1(models.Model):
     def cron_auto_pay_all_invoices_1(self):
 
         invoices = self.search([
-            ('move_type', '=', 'out_invoice'),
             ('state', '=', 'posted'),
             ('payment_state', '!=', 'paid')
         ])
