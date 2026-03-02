@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 
-class AccountMove213213321321(models.Model):
+class AutoPay1(models.Model):
 
     _inherit = 'account.move'
 
