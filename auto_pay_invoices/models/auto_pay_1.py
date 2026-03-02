@@ -10,45 +10,18 @@ class AutoPay1(models.Model):
 
         invoices = self.search([
             ('move_type', '=', 'out_invoice'),
-            ('state', '=', 'posted'),
-            ('payment_state', '!=', 'paid')
+            ('state', '=', 'posted')
         ])
 
-        if not invoices:
-            return
-
-        bank_journal = self.env['account.journal'].search([
-            ('type', '=', 'bank')
-        ], limit=1)
-
-        if not bank_journal:
-            return
-
         for invoice in invoices:
+            # Force recompute payment_state
+            invoice._compute_payment_state()
 
-            if invoice.amount_residual <= 0:
-                continue
+        # Update payment state of payments as well
+        payments = self.env['account.payment'].search([
+            ('state', '=', 'posted')
+        ])
 
-            payment_vals = {
-                'payment_type': 'inbound',
-                'partner_type': 'customer',
-                'partner_id': invoice.partner_id.id,
-                'amount': invoice.amount_residual,
-                'journal_id': bank_journal.id,
-                'payment_method_line_id': bank_journal.inbound_payment_method_line_ids[:1].id,
-                'date': invoice.invoice_date or fields.Date.today(),
-                'ref': f'Auto Payment for {invoice.name}',
-            }
-
-            payment = self.env['account.payment'].create(payment_vals)
-
-            payment.action_post()
-
-            # Reconcile receivable lines
-            lines = (invoice.line_ids + payment.move_id.line_ids).filtered(
-                lambda l: l.account_id == invoice.partner_id.property_account_receivable_id
-                and not l.reconciled
-            )
-
-            if lines:
-                lines.reconcile()
+        for payment in payments:
+            # Force recompute is_posted or status check
+            payment._compute_payment_state()
