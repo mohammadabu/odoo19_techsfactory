@@ -1,12 +1,11 @@
 <odoo>
-    <record id="cron_auto_pay_invoices" model="ir.cron">
-        <field name="name">Auto Pay Invoices</field>
+    <record id="ir_cron_auto_pay_all_invoices" model="ir.cron">
+        <field name="name">Auto Pay All Posted Invoices</field>
         <field name="model_id" ref="account.model_account_move"/>
         <field name="state">code</field>
-        <field name="code">model.cron_auto_pay_invoices()</field>
+        <field name="code">model.cron_auto_pay_all_invoices()</field>
         <field name="interval_number">1</field>
         <field name="interval_type">days</field>
-        <field name="numbercall">1</field>
         <field name="active">True</field>
     </record>
 </odoo>
