@@ -10,14 +10,23 @@ class AutoPay1(models.Model):
 
         # Only posted invoices that are not showing as paid
         invoices = self.search([
-            ('move_type', '=', 'out_invoice'),
             ('state', '=', 'posted'),
             ('payment_state', '!=', 'paid')
         ])
 
         for invoice in invoices:
-            # If invoice is fully paid (residual is 0), force payment_state update
-            if invoice.amount_residual <= 0:
-                # Trigger compute by writing the same value
-                invoice.write({'invoice_date': invoice.invoice_date or False})
+            # Get all posted payments linked to this invoice
+            payments = self.env['account.payment'].search([
+                ('state', '=', 'posted'),
+                ('partner_id', '=', invoice.partner_id.id)
+            ])
+
+            # Filter payments that are fully reconciled with this invoice
+            for payment in payments:
+                lines_to_reconcile = (invoice.line_ids + payment.move_id.line_ids).filtered(
+                    lambda l: l.account_id == invoice.partner_id.property_account_receivable_id and not l.reconciled
+                )
+                if lines_to_reconcile:
+                    lines_to_reconcile.reconcile()
+
 
