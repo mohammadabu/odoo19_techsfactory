@@ -8,20 +8,29 @@ class AutoPay1(models.Model):
     @api.model
     def cron_auto_pay_all_invoices_1(self):
 
+        # Find all posted invoices that are not showing as paid
         invoices = self.search([
             ('move_type', '=', 'out_invoice'),
-            ('state', '=', 'posted')
+            ('state', '=', 'posted'),
+            ('payment_state', '!=', 'paid')
         ])
 
-        for invoice in invoices:
-            # Force recompute payment_state
-            invoice._compute_payment_state()
+        if not invoices:
+            return
 
-        # Update payment state of payments as well
+        # Force recompute of stored payment_state field
+        invoices.invalidate_cache(['line_ids', 'amount_residual', 'payment_state'])
+        invoices._compute_payment_state()  # recompute
+        invoices._write({'payment_state': invoices.mapped('payment_state')})
+
+        # Do the same for posted payments
         payments = self.env['account.payment'].search([
-            ('state', '=', 'posted')
+            ('state', '=', 'posted'),
+            ('payment_state', '!=', 'paid')
         ])
 
-        for payment in payments:
-            # Force recompute is_posted or status check
-            payment._compute_payment_state()
+        if payments:
+            payments.invalidate_cache(['move_line_ids', 'payment_state'])
+            payments._compute_payment_state()
+            payments._write({'payment_state': payments.mapped('payment_state')})
+
