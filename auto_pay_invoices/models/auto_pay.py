@@ -1,11 +1,12 @@
 from odoo import models, fields, api
 
+
 class AccountMove213213321321(models.Model):
 
     _inherit = 'account.move'
 
     @api.model
-    def cron_auto_pay_all_invoices(self):
+    def cron_auto_pay_all_invoices_1(self):
 
         invoices = self.search([
             ('move_type', '=', 'out_invoice'),
