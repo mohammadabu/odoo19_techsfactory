@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 
-class AccountMove(models.Model):
+class AccountMove213213321321(models.Model):
+
     _inherit = 'account.move'
 
     @api.model
