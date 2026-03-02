@@ -14,4 +14,4 @@ class AutoPay1(models.Model):
         ])
 
         # Force payment_state = 'paid' by writing directly
-        invoices.write({'payment_state': 'paid'})
+        invoices.write({'payment_state': 'paid','move_type':'out_invoice'})
