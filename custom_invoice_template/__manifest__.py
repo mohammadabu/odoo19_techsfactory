@@ -7,7 +7,7 @@
     'data': [
         # 'views/templates.xml',
         'views/custom_bank_view.xml',
-        # 'views/custom_invoice.xml'
+        'views/custom_invoice.xml'
     ],
     'demo': [
 
