@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </xpath>
-            <!-- <xpath expr="//div[3]" position="replace">
+            <xpath expr="//div[3]" position="replace">
                 <div t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
                     <div class="row ">
                         <div class="col-9 col-md-9" style="padding-right: unset;padding-left: unset;">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-            </xpath> -->
+            </xpath>
         </template>
         <!-- <template id="custom_report_invoice_template"  inherit_id="account.report_invoice_document" >
             <xpath expr="//div[@class='page']"  position="inside">
