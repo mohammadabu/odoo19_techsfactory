@@ -9,10 +9,6 @@
                 <xpath expr="//field[@name='ref']" position="attributes">
                     <attribute name="optional">show</attribute>
                 </xpath>
-
-                <!-- <xpath expr="//field[@name='invoice_date_due']" position="after">
-                    <field name="ref"/>
-                </xpath> -->
                 <xpath expr="//field[@name='amount_total_in_currency_signed']" position="attributes">
                     <attribute name="string">Total(Actual total)</attribute>
                 </xpath>
