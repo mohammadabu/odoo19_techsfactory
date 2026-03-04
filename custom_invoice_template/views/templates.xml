@@ -27,7 +27,7 @@
                 </div>
             </xpath> -->
         </template>
-        <template id="custom_report_invoice_template"  inherit_id="account.report_invoice_document" >
+        <!-- <template id="custom_report_invoice_template"  inherit_id="account.report_invoice_document" >
             <xpath expr="//div[@class='page']"  position="inside">
                 <style type="text/css">   
                     @font-face {
@@ -240,6 +240,6 @@
             <xpath expr="//div[@id='total']/div/table/tr[1]"  position="replace">
                 <span></span>
             </xpath>
-        </template>
+        </template> -->
     </data>
 </odoo> 
