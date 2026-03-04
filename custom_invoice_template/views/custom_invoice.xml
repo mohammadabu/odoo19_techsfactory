@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record id="custom_invoice_tree_list" model="ir.ui.view">
+            <field name="name">Custom Invoice Tree List</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_origin']" position="after">
+                    <field name="ref" optional="show"/>
+                </xpath>
+                <xpath expr="//field[@name='amount_total_signed']" position="before">
+                    <field name="amount_total" optional="show" string="Total(Actual total)"/>
+                </xpath>
+                <!-- <xpath expr="//field[@name='amount_total_signed']" position="before">
+                    <field name="amount_total" optional="show" string="Total(Actual total)"/>
+                </xpath> -->
+                <xpath expr="//field[@name='amount_untaxed_signed']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='amount_residual_signed']" position="attributes"> 
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        <!-- <record id="custom_invoice_view_form" model="ir.ui.view">
+            <field name="name">Custom Invoice view form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_partner_bank_id']" position="attributes">
+                     <attribute name="domain">[]</attribute>
+                </xpath>
+            </field>
+        </record> -->
+    </data>
+</odoo>   
