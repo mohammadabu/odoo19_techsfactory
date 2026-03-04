@@ -14,25 +14,10 @@
                     </div>
                 </div>
             </xpath>
-            <xpath expr="//div[3]" position="replace">
+            <!-- <xpath expr="//div[3]" position="replace">
                 <div t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
-                    <!-- <div class="text-center" style="border-top: 1px solid black;">
-                        <ul class="list-inline mb4">
-                            <li t-if="company.phone" class="list-inline-item d-inline">Phone: <span t-field="company.phone"/></li>
-                            <li t-if="company.email" class="list-inline-item d-inline">Email: <span t-field="company.email"/></li>
-                            <li t-if="company.website" class="list-inline-item d-inline">Web: <span t-field="company.website"/></li>
-                            <li t-if="company.vat" class="list-inline-item d-inline"><t t-esc="company.country_id.vat_label or 'Tax ID'"/>: <span t-field="company.vat"/></li>
-                        </ul>
-                        <div name="financial_infos">
-                            <span t-field="company.report_footer"/>
-                        </div>
-                        <div t-if="report_type == 'pdf'" class="text-muted">
-                            Page: <span class="page"/> / <span class="topage"/>
-                        </div>
-                    </div> -->
                     <div class="row ">
                         <div class="col-9 col-md-9" style="padding-right: unset;padding-left: unset;">
-                            <!-- <img  t-att-src="image_data_uri(company.company_footer)" class="img-fluid"  style="max-width: % !important;height: auto !important;" alt="Logo"/> -->
                             <img  t-att-src="image_data_uri(company.company_footer)" class="img-fluid" alt="Logo"/>
                         </div>
                         <div class="col-3 col-md-3">
@@ -40,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-            </xpath>
+            </xpath> -->
         </template>
         <template id="custom_report_invoice_template"  inherit_id="account.report_invoice_document" >
             <xpath expr="//div[@class='page']"  position="inside">
