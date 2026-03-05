@@ -144,7 +144,7 @@
                             <th name="th_quantity" class="text-center" style="border-top: 1px solid white !important;border-bottom: 1px solid !important;width: 10% !important;"><span style="font-size: 14px !important;font-weight: 800 !important;color: #242222 !important;padding: 10px !important;">Qty</span></th>
                             <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}" style="border-top: 1px solid white !important;border-bottom: 1px solid !important;width: 14% !important;"><span style="font-size: 14px !important;font-weight: 800 !important;color: #242222 !important;padding: 10px !important;">Price</span></th>
                             <th name="th_subtotal" class="text-right" style="border-top: 1px solid white !important;border-bottom: 1px solid !important;width: 18% !important;padding: 10px !important;">
-                                <span style="font-size: 14px !important;font-weight: 800 !important;color: #242222 !important;">Amount</span>
+                                <!-- <span style="font-size: 14px !important;font-weight: 800 !important;color: #242222 !important;">Amount</span> -->
                                 <span style="font-size: 14px !important;font-weight: 800 !important;color: #242222 !important;">Total Price</span>
                             </th>
                         </tr>
@@ -167,7 +167,7 @@
                                     </td>
                                     <td style="font-size: 14px !important;font-weight: 500 !important;color: #3f3a3a !important;padding: 10px !important;" class="text-right"><span t-field="line.price_unit"/></td>
                                     <td style="font-size: 14px !important;font-weight: 500 !important;color: #3f3a3a !important;padding: 10px !important;" class="text-right o_price_total">
-                                        <span class="text-nowrap" t-field="line.price_subtotal" />
+                                        <!-- <span class="text-nowrap" t-field="line.price_subtotal" /> -->
                                         <span class="text-nowrap" t-field="line.price_total" />
                                     </td>
                                 </t>
