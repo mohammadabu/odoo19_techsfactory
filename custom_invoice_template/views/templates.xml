@@ -125,6 +125,10 @@
                 </div>
             </xpath>
 
+            <xpath expr="//div[@id='payment_term']/div[4]"  position="replace">
+            </xpath>
+            <xpath expr="//div[contains(@class, 'page')]/div[@id='qrcode']"  position="replace">
+            </xpath>
             <!-- <xpath expr="//div[@class='page']/p[1]"  position="replace">
             </xpath>
             <xpath expr="//div[@class='page']/p[1]"  position="replace">
@@ -132,9 +136,8 @@
             <xpath expr="//div[@class='page']/p[1]"  position="replace">
             </xpath>
             <xpath expr="//div[@class='page']/p[1]"  position="replace">
-            </xpath>
-            <xpath expr="//div[@class='page']/div[@id='qrcode']"  position="replace">
             </xpath> -->
+            
             <xpath expr="//table[@name='invoice_line_table']"  position="replace">
                 <table class="o_has_total_table table-borderless table table-sm o_main_table mb-0" name="invoice_line_table">
                     <thead>
