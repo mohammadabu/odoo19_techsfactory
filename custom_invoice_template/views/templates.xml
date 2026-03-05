@@ -27,12 +27,12 @@
                 </div>
             </xpath>
         </template>
-        <!-- <template id="custom_report_invoice_template"  inherit_id="account.report_invoice_document" >
+        <template id="custom_report_invoice_template"  inherit_id="account.report_invoice_document" >
             <xpath expr="//div[@class='page']"  position="inside">
                 <style type="text/css">   
                     @font-face {
                         font-family: 'SF-COMPACT';
-                        src: url('/custom_sales_order/static/fonts/sf-compact/SF-Compact-Text-Thin.otf') format('truetype');
+                        src: url('/custom_invoice_template/static/fonts/sf-compact/SF-Compact-Text-Thin.otf') format('truetype');
                         font-weight: 100;
                         font-style: 'normal';
                     }
@@ -43,7 +43,7 @@
 
                 </style>
             </xpath>
-            <xpath expr="//t/t[2]"  position="after">
+            <!-- <xpath expr="//t/t[2]"  position="after">
                 <div class="row" style="margin-top: 20px;">
                     <div class="col-6 col-md-6">
                         <p style="text-align: left !important;margin: 0 !important;font-weight: 600 !important;color: ##1c1b1b !important;font-size: 18px !important;"><span t-field="o.company_id.name"/></p>
@@ -239,7 +239,7 @@
             </xpath>
             <xpath expr="//div[@id='total']/div/table/tr[1]"  position="replace">
                 <span></span>
-            </xpath>
-        </template> -->
+            </xpath> -->
+        </template>
     </data>
 </odoo> 
