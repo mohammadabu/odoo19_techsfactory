@@ -66,11 +66,11 @@
                     </div>
                 </div>
             </xpath>
-            <xpath expr="//div[1]"  position="replace">
+            <xpath expr="//div[contains(@class, 'page')]/div[1]"  position="replace">
                 <address></address>
             </xpath>
-            <!-- <xpath expr="//div[@class='page']/h2"  position="replace">
-            </xpath> -->
+            <xpath expr="//div[@class='page']/t[1]"  position="replace">
+            </xpath>
             <xpath expr="//div[@id='informations']"  position="replace">
                 <div id="informations" class="row mt32 mb32">
                     <div class="col-7 col-md-7"> </div>
