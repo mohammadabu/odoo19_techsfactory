@@ -15,7 +15,7 @@
                 </div>
             </xpath>
             <xpath expr="//div[3]" position="replace">
-                <div t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
+                <div t-if="company.company_footer" t-attf-class="footer o_company_#{company.id}_layout {{report_type != 'pdf' and 'mt-auto'}}">
                     <div class="row ">
                         <div class="col-9 col-md-9" style="padding-right: unset;padding-left: unset;">
                             <img  t-att-src="image_data_uri(company.company_footer)" class="img-fluid" alt="Logo"/>
