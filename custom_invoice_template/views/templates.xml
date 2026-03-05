@@ -124,6 +124,7 @@
                     </div>
                 </div>
             </xpath>
+
             <!-- <xpath expr="//div[@class='page']/p[1]"  position="replace">
             </xpath>
             <xpath expr="//div[@class='page']/p[1]"  position="replace">
@@ -133,7 +134,7 @@
             <xpath expr="//div[@class='page']/p[1]"  position="replace">
             </xpath>
             <xpath expr="//div[@class='page']/div[@id='qrcode']"  position="replace">
-            </xpath>
+            </xpath> -->
             <xpath expr="//table[@name='invoice_line_table']"  position="replace">
                 <table class="table table-sm o_main_table" name="invoice_line_table">
                     <thead>
@@ -241,7 +242,7 @@
                     <span t-if="o.invoice_partner_bank_id.bank_id.street" t-field="o.invoice_partner_bank_id.bank_id.street"></span>
                 </p>
             </xpath>
-            <xpath expr="//div[@id='total']/div/table"  position="attributes"> 
+            <!-- <xpath expr="//div[@id='total']/div/table"  position="attributes"> 
                 <attribute name="style">display:none !important;</attribute>
                 <attribute name="class"></attribute>
             </xpath>
