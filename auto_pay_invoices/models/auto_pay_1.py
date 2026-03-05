@@ -1,6 +1,9 @@
 from odoo import api, fields, models, _, SUPERUSER_ID, modules
 from odoo import models,_, fields, api
 from odoo.tools import ( formatLang)
+import logging
+_logger = logging.getLogger(__name__)
+
 
 class AutoPay1(models.Model):
 
@@ -18,8 +21,12 @@ class AutoPay1(models.Model):
             payments_widget_vals = {'title': _('Less Payment'), 'outstanding': False, 'content': []}
 
             if move.state in {'draft', 'posted'} and move.is_invoice(include_receipts=True):
+                _logger.info("move.state ")
+
                 reconciled_vals = []
                 reconciled_partials = move.sudo()._get_all_reconciled_invoice_partials()
+                _logger.info("reconciled_partials")
+                _logger.info(reconciled_partials)
                 for reconciled_partial in reconciled_partials:
                     counterpart_line = reconciled_partial['aml']
                     if counterpart_line.move_id.ref:
