@@ -43,7 +43,7 @@
 
                 </style>
             </xpath>
-            <!-- <xpath expr="//t/t[2]"  position="after">
+            <xpath expr="//div[1]"  position="after">
                 <div class="row" style="margin-top: 20px;">
                     <div class="col-6 col-md-6">
                         <p style="text-align: left !important;margin: 0 !important;font-weight: 600 !important;color: ##1c1b1b !important;font-size: 18px !important;"><span t-field="o.company_id.name"/></p>
@@ -66,10 +66,10 @@
                     </div>
                 </div>
             </xpath>
-            <xpath expr="//t/t[2]"  position="replace">
+            <xpath expr="//div[1]"  position="replace">
                 <address></address>
             </xpath>
-            <xpath expr="//div[@class='page']/h2"  position="replace">
+            <!-- <xpath expr="//div[@class='page']/h2"  position="replace">
             </xpath>
             <xpath expr="//div[@id='informations']"  position="replace">
                 <div id="informations" class="row mt32 mb32">
