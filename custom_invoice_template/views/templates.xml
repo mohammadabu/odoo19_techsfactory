@@ -135,6 +135,8 @@
                     </p>
                 </div>
             </xpath>
+            <xpath expr="//div[@id='right-elements']"  position="replace">
+            </xpath>
             <!-- <xpath expr="//div[@class='page']/p[1]"  position="replace">
             </xpath>
             <xpath expr="//div[@class='page']/p[1]"  position="replace">
