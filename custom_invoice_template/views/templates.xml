@@ -246,6 +246,12 @@
             </xpath> -->
             <xpath expr="//div[contains(@id,'qrcode')]"  position="replace">
                 <div id="qrcode">
+                    <p name="payment_communication" style="display:none;">
+                        Payment Communication: <span class="fw-bold" t-field="o.payment_reference">INV/2023/00001</span>
+                        <t t-if="o.partner_bank_id">
+                            <br/> on this account: <span t-field="o.partner_bank_id" class="fw-bold"/>
+                        </t>
+                    </p>
                 </div>
             </xpath>
         </template>
