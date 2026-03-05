@@ -199,7 +199,7 @@
                             <td style="font-size: 14px !important;font-weight: 500 !important;color: #3f3a3a !important;padding: 10px !important;" class="text-right" name="account_invoice_line_name"><span style="font-weight: 900 !important;">Total</span></td>
                             <td style="font-size: 14px !important;font-weight: 500 !important;color: #3f3a3a !important;padding: 10px !important;" class="text-right" name="account_invoice_line_name"><span style="font-weight: 900 !important;" t-field="o.amount_total"/></td>
                         </tr>
-                        <t t-set="payments_vals" t-value="o.sudo()._get_reconciled_info_JSON_values()"/>
+                        <t t-set="payments_vals" t-value="o.sudo().invoice_payments_widget and o.sudo().invoice_payments_widget['content'] or []"/>
                         <t t-set="total_payment" t-value="0"/>
                         <t t-foreach="payments_vals" t-as="payment_vals">
                             <t t-set="total_payment" t-value="total_payment + payment_vals['amount']"/>
