@@ -9,8 +9,4 @@ class Custom_Invoice(models.Model):
 
     # def _check_balanced(self):
     #     return True
-    invoice_payments_widget = fields.Binary(
-        groups="account.group_account_invoice,account.group_account_readonly",
-        compute='_compute_payments_widget_reconciled_info',
-        exportable=True,
-    )
+    invoice_payments_widget = fields.Binary()
