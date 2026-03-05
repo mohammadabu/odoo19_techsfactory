@@ -126,6 +126,14 @@
             </xpath>
 
             <xpath expr="//div[@id='payment_term']/div[4]"  position="replace">
+                <div class="mb-3" style="display:none;">
+                    <p name="payment_communication" >
+                        Payment Communication: <span class="fw-bold" t-field="o.payment_reference">INV/2023/00001</span>
+                        <t t-if="o.partner_bank_id">
+                            <br/> on this account: <span t-field="o.partner_bank_id" class="fw-bold"/>
+                        </t>
+                    </p>
+                </div>
             </xpath>
             <!-- <xpath expr="//div[@class='page']/p[1]"  position="replace">
             </xpath>
