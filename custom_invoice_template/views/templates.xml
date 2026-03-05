@@ -257,6 +257,9 @@
                     
                 </div>
             </xpath>
+            <xpath expr="//div[contains(@id,'payment_link_qrcode')]"  position="replace">
+            </xpath>
+            
         </template>
     </data>
 </odoo> 
