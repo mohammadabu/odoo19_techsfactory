@@ -261,5 +261,18 @@
             </xpath>
             
         </template>
+
+        <template id="custom_report_tax_totals_template"  inherit_id="account.document_tax_totals_template" >
+            <xpath expr="//t[2]" position="replace">
+
+            </xpath>
+            <xpath expr="//tr[1]" position="replace">
+            
+            </xpath>
+            <xpath expr="//tr[2]" position="replace">
+            
+            </xpath>
+        </template>
+        
     </data>
 </odoo> 
