@@ -136,7 +136,7 @@
             <xpath expr="//div[@class='page']/div[@id='qrcode']"  position="replace">
             </xpath> -->
             <xpath expr="//table[@name='invoice_line_table']"  position="replace">
-                <table class="table table-sm o_main_table" name="invoice_line_table">
+                <table class="o_has_total_table table-borderless table table-sm o_main_table mb-0" name="invoice_line_table">
                     <thead>
                         <tr>
                             <th name="th_item" class="text-left" style="border-top: 1px solid white !important;border-bottom: 1px solid !important;width: 22% !important;padding: 10px !important;"><span style="font-size: 14px !important;font-weight: 800 !important;color: #242222 !important;">Item</span></th>
