@@ -127,7 +127,9 @@
 
             <xpath expr="//div[@id='payment_term']/div[4]"  position="replace">
             </xpath>
-            <xpath expr="//div[@id='qrcode']"  position="replace">
+            <xpath expr="//div[contains(@id,'qrcode')]"  position="replace">
+                <div id="qrcode">
+                </div>
             </xpath>
             <!-- <xpath expr="//div[@class='page']/p[1]"  position="replace">
             </xpath>
