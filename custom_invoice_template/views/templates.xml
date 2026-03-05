@@ -224,22 +224,22 @@
                 </table>
                 <div class="mb-2" style="border-top: 2px solid gray !important;"></div> 
                 <span t-raw="o.company_id.company_terms" />
-                <p t-if="o.invoice_partner_bank_id.acc_number" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">ACCOUNT NUMBER</p>
-                <p t-if="o.invoice_partner_bank_id.acc_number" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.invoice_partner_bank_id.acc_number"></span></p>
-                <p t-if="o.invoice_partner_bank_id.acc_holder_name" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">Beneficiary Name (ENGLISH)</p>
-                <p t-if="o.invoice_partner_bank_id.acc_holder_name" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.invoice_partner_bank_id.acc_holder_name"></span></p>
-                <p t-if="o.invoice_partner_bank_id.beneficiary_ar" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">Beneficiary Name (ARABIC)</p>
-                <p t-if="o.invoice_partner_bank_id.beneficiary_ar" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.invoice_partner_bank_id.beneficiary_ar"></span></p>
-                <p t-if="o.invoice_partner_bank_id.iban" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">IBAN</p>
-                <p t-if="o.invoice_partner_bank_id.iban" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.invoice_partner_bank_id.iban"></span></p>
-                <p t-if="o.invoice_partner_bank_id.bank_id.bic" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">Swift Code:</p>
-                <p t-if="o.invoice_partner_bank_id.bank_id.bic" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.invoice_partner_bank_id.bank_id.bic"></span></p>
-                <p t-if="o.invoice_partner_bank_id.bank_id.bic" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">Bank Address:</p>
-                <p t-if="o.invoice_partner_bank_id.bank_id.bic" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">
-                    <span t-if="o.invoice_partner_bank_id.bank_id.city" t-field="o.invoice_partner_bank_id.bank_id.city"></span>,
-                    <span t-if="o.invoice_partner_bank_id.bank_id.name" t-field="o.invoice_partner_bank_id.bank_id.country.name"></span>,
-                    <span t-if="o.invoice_partner_bank_id.bank_id.street2" t-field="o.invoice_partner_bank_id.bank_id.street2"></span>,
-                    <span t-if="o.invoice_partner_bank_id.bank_id.street" t-field="o.invoice_partner_bank_id.bank_id.street"></span>
+                <p t-if="o.bank_partner_id.acc_number" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">ACCOUNT NUMBER</p>
+                <p t-if="o.bank_partner_id.acc_number" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.bank_partner_id.acc_number"></span></p>
+                <p t-if="o.bank_partner_id.acc_holder_name" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">Beneficiary Name (ENGLISH)</p>
+                <p t-if="o.bank_partner_id.acc_holder_name" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.bank_partner_id.acc_holder_name"></span></p>
+                <p t-if="o.bank_partner_id.beneficiary_ar" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">Beneficiary Name (ARABIC)</p>
+                <p t-if="o.bank_partner_id.beneficiary_ar" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.bank_partner_id.beneficiary_ar"></span></p>
+                <p t-if="o.bank_partner_id.iban" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">IBAN</p>
+                <p t-if="o.bank_partner_id.iban" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.bank_partner_id.iban"></span></p>
+                <p t-if="o.bank_partner_id.bank_id.bic" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">Swift Code:</p>
+                <p t-if="o.bank_partner_id.bank_id.bic" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;"><span t-field="o.bank_partner_id.bank_id.bic"></span></p>
+                <p t-if="o.bank_partner_id.bank_id.bic" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">Bank Address:</p>
+                <p t-if="o.bank_partner_id.bank_id.bic" style="font-weight: normal !important;color: gray !important;margin: 10px 0px 10px 0px !important;font-size: 14px !important;">
+                    <span t-if="o.bank_partner_id.bank_id.city" t-field="o.bank_partner_id.bank_id.city"></span>,
+                    <span t-if="o.bank_partner_id.bank_id.name" t-field="o.bank_partner_id.bank_id.country.name"></span>,
+                    <span t-if="o.bank_partner_id.bank_id.street2" t-field="o.bank_partner_id.bank_id.street2"></span>,
+                    <span t-if="o.bank_partner_id.bank_id.street" t-field="o.bank_partner_id.bank_id.street"></span>
                 </p>
             </xpath>
             <!-- <xpath expr="//div[@id='total']/div/table"  position="attributes"> 
